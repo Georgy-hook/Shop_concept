@@ -3,7 +3,7 @@
 //  Ecomercie concept
 //
 //  Created by Georgy on 21.09.2022.
-//
+// Окно параметров фильтра поиска, раскрывающийся список с checkbutton построенный на TableView при помощи протокола описанного в ExpandableHeaderView
 
 import UIKit
 
