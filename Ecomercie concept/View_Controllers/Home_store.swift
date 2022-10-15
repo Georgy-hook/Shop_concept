@@ -3,54 +3,40 @@
 //  Ecomercie concept
 //
 //  Created by Georgy on 23.08.2022.
-//
+// Главное окно, Обработка двух collectionView, TextField
 
 import UIKit
 import Foundation
 
-extension UIColor {
-   convenience init(red: Int, green: Int, blue: Int) {
-       assert(red >= 0 && red <= 255, "Invalid red component")
-       assert(green >= 0 && green <= 255, "Invalid green component")
-       assert(blue >= 0 && blue <= 255, "Invalid blue component")
-
-       self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: 1.0)
-   }
-
-   convenience init(rgb: Int) {
-       self.init(
-           red: (rgb >> 16) & 0xFF,
-           green: (rgb >> 8) & 0xFF,
-           blue: rgb & 0xFF
-       )
-   }
-}
-extension UIImageView {
-    func downloaded(from url: URL, contentMode mode: UIView.ContentMode = .scaleAspectFit) {
-        contentMode = mode
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            guard
-                let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
-                let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
-                let data = data, error == nil,
-                let image = UIImage(data: data)
-                else { return }
-            DispatchQueue.main.async() {
-                self.image = image
-            }
-        }.resume()
+class Home_store: UIViewController, UICollectionViewDataSource,UITextFieldDelegate, UICollectionViewDelegate,UITabBarDelegate{
+  
+    
+    
+//* Таб бар переход в корзину по нажатию на кнопку | Демонстрация наличия элементов в корзине
+    @IBOutlet weak var CustomTabBar: CustomBar!
+    @IBOutlet weak var Bag: UITabBarItem!
+    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        let nextViewController = storyboard!.instantiateViewController(withIdentifier: "CartController") as! CartController
+        if item.tag == 0 {
+            navigationController?.pushViewController(nextViewController, animated: true)
+        }
     }
-    func downloaded(from link: String, contentMode mode: UIView.ContentMode = .scaleAspectFit) {  // for swift 4.2 syntax just use ===> mode: UIView.ContentMode
-        guard let url = URL(string: link) else { return }
-        downloaded(from: url, contentMode: mode)
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        Bag.badgeValue = String(Cart)
     }
-}
-
-
-
-class Home_store: UIViewController, UICollectionViewDataSource,UITextFieldDelegate, UICollectionViewDelegate,UIScrollViewDelegate {
-var cells: Response?
+//*
+    
+    
     //* Инициализация CollectionView1(Карусель) и CollectionView2(Группа)
+    
+    @IBOutlet weak var CarouselView: UICollectionView!
+    
+    @IBOutlet weak var GroupCollectionView: UICollectionView!
+    
+    var cells = Connect().Home//* Переменная хранящая в себе API
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         if collectionView == CarouselView {
             return 1
@@ -96,12 +82,25 @@ var cells: Response?
             return cell
         }
     }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = GroupCollectionView.cellForItem(at: indexPath) as! GroupCell
         let nextViewController = storyboard!.instantiateViewController(withIdentifier: "ProductDetailController") as! ProductDetailController
+        if cell.IsLike == true {
+            nextViewController.IsFavorite = true
+        }
         navigationController?.pushViewController(nextViewController, animated: true)
+       
     }
  
    //*
+    
+    
+    
+    //* TextField делегат для откидывания клавиатуры и добавление кнопки сбоку
+   
+    @IBOutlet weak var Search1: UITextField!
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // Откинуть клавиатуру
         textField.resignFirstResponder()
@@ -109,49 +108,22 @@ var cells: Response?
         print(textField.text!)
         return true;
     }
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        if scrollView == Scroll1{
-//            scrollView.contentOffset = CGPoint(x: scrollView.contentOffset.x, y: 0)
-//        }
-    }
-
-
-    @IBOutlet weak var Scroll1: UIScrollView!
-    @IBOutlet weak var Search1: UITextField!
-
-    @IBOutlet var ButtonsUpBar: [UIButton]!
     
-   
-    @IBOutlet weak var CarouselView: UICollectionView!
-    
-    @IBOutlet weak var GroupCollectionView: UICollectionView!
-    
+    //*
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        Search1.placeholder = "Search"
-        CarouselView.dataSource = self // Инициализация карусели
+        //* Инициализаторы
+        CarouselView.dataSource = self
         GroupCollectionView.delegate = self
         GroupCollectionView.dataSource = self
         Search1.delegate = self
-     
-        
-        //* Иконка поиска слева от TextField(Строка поиска)
-        let findTextFieldImageView = UIImageView(frame: CGRect(x: 8.0, y: 12.0, width: 20.0, height: 20.0))
-        let image = UIImage(named: "Search_Icon.png")
-        findTextFieldImageView.image = image
-        findTextFieldImageView.contentMode = .scaleAspectFit
-        findTextFieldImageView.tintColor = .gray
-        findTextFieldImageView.backgroundColor = .clear
-        let findTextFieldView = UIView(frame: CGRect(x: 0, y: 0, width: 38, height: 40))
-        findTextFieldView.addSubview(findTextFieldImageView)
-        findTextFieldView.backgroundColor = .clear
-        Search1.leftViewMode = UITextField.ViewMode.always
-        Search1.leftView = findTextFieldView
+        CustomTabBar.delegate = self
         //*
+        
+        //* Обработчик прерываний для Get запроса
         let url1=URL(string: "https://run.mocky.io/v3/654bd15e-b121-49ba-a588-960956b15175")
-        getData(from: url1!) { json in
-            print(json.best_seller[0].discount_price)
+        Connect().getDataResponse(from: url1!) { json in
             OperationQueue.main.addOperation({ [self] in
                 
                 var indexPath = IndexPath(item: 0, section: 0)
@@ -174,44 +146,17 @@ var cells: Response?
                 cells = json
                                })
         }
-        
-        
-        //* Get запрос
-        func getData(from url:URL, completion:@escaping(_:Response)->()){
-            let task = URLSession.shared.dataTask(with: url){data,response,error in
-             
-                guard let data = data, error == nil else{
-                    print("something wrong")
-                    return
-                }
-                
-                //have data
-                var result:Response?
-                do {
-                    result = try JSONDecoder().decode(Response.self, from: data)
-                }
-                catch{
-                    print("failed to convert \(error.localizedDescription)")
-                }
-                
-              guard let json = result else{
-                    return
-              }
-            completion(json)
-              
-            }
-            task.resume()
-        }
         //*
 
     }
    
-    @IBAction func IfTapped(_ sender: UIButton) {
+@IBOutlet var ButtonsUpBar: [UIButton]! // Коллекция кнопок-категорий над строкой поиска
+    
+    @IBAction func IfTapped(_ sender: UIButton) {//Кнопки красятся в ScrollView
         for i in ButtonsUpBar{
             i.backgroundColor = .systemGray4
         }
-        let color1 = UIColor(rgb:0xFF6E4E)
-        sender.backgroundColor = color1
+        sender.backgroundColor = UIColor(rgb:0xFF6E4E)
        
         
     }
