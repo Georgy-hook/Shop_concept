@@ -3,7 +3,7 @@
 //  Ecomercie concept
 //
 //  Created by Georgy on 23.09.2022.
-//
+// Детали телефона, get запрос и его обработка в CollectionView и Label, реализация рейтинговых звезд, а также поддержка кликабельности кнопок выбора деталей
 
 import UIKit
 
@@ -58,7 +58,7 @@ class ProductDetailController: UIViewController,UICollectionViewDataSource {
         //*
         //* Обработка прерываний
         let url1=URL(string: "https://run.mocky.io/v3/6c14c560-15c6-4248-b9d2-b4508df7d4f5")
-        getData(from: url1!) { json in
+        getDataDetails(from: url1!) { json in
             print(json.title)
             self.detail = json
             var indexPath = IndexPath(item: 0, section: 0)
@@ -75,34 +75,7 @@ class ProductDetailController: UIViewController,UICollectionViewDataSource {
                 SSDShow.text = detail?.ssd
             })
         }
-        //*
-        //* Get запрос
-        func getData(from url:URL, completion:@escaping(_:Details)->()){
-            let task = URLSession.shared.dataTask(with: url){data,response,error in
-             
-                guard let data = data, error == nil else{
-                    print("something wrong")
-                    return
-                }
-                
-                //have data
-                var result:Details?
-                do {
-                    result = try JSONDecoder().decode(Details.self, from: data)
-                }
-                catch{
-                    print("failed to convert \(error.localizedDescription)")
-                }
-                
-              guard let json = result else{
-                    return
-              }
-            completion(json)
-              
-            }
-            task.resume()
-        }
-        //*
+
    
     }
     
@@ -145,7 +118,7 @@ class ProductDetailController: UIViewController,UICollectionViewDataSource {
     
     @IBAction func ChooseColor(_ sender: UIButton) {
         for i in 0...1 {
-            ChooseColor[i].setImage(UIImage(named: "Bag"), for: .normal)
+            ChooseColor[i].setImage(UIImage(), for: .normal)
         }
         sender.setImage(UIImage(systemName: "checkmark"), for: .normal)
         

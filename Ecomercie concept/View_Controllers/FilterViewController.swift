@@ -3,7 +3,7 @@
 //  Ecomercie concept
 //
 //  Created by Georgy on 21.09.2022.
-//
+// Окно параметров фильтра поиска, раскрывающийся список с checkbutton построенный на TableView при помощи протокола описанного в ExpandableHeaderView
 
 import UIKit
 
@@ -52,10 +52,6 @@ class FilterViewController: UIViewController,UITableViewDelegate,UITableViewData
         let header = ExpandableHeaderView()
         header.setup(withTitle: sections[section].Filter, Section: section, delegate: self)
        return header
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
     }
     
     var ButtonPressed = [true,true,true]

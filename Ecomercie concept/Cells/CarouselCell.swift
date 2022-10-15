@@ -14,11 +14,5 @@ class CarouselCell: UICollectionViewCell {
     @IBOutlet weak var ChekNewImage: UIImageView!
 
     @IBOutlet weak var Label2: UILabel!
-    
-    var image: UIImage?
-    func update(image: UIImage) {
-          BackgroundImage.image = image
-      }
-    
    
 }

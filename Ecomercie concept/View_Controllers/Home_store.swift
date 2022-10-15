@@ -3,52 +3,12 @@
 //  Ecomercie concept
 //
 //  Created by Georgy on 23.08.2022.
-//
+// Главное окно, Обработка двух collectionView, TextField
 
 import UIKit
 import Foundation
 
-extension UIColor {
-   convenience init(red: Int, green: Int, blue: Int) {
-       assert(red >= 0 && red <= 255, "Invalid red component")
-       assert(green >= 0 && green <= 255, "Invalid green component")
-       assert(blue >= 0 && blue <= 255, "Invalid blue component")
-
-       self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: 1.0)
-   }
-
-   convenience init(rgb: Int) {
-       self.init(
-           red: (rgb >> 16) & 0xFF,
-           green: (rgb >> 8) & 0xFF,
-           blue: rgb & 0xFF
-       )
-   }
-}
-extension UIImageView {
-    func downloaded(from url: URL, contentMode mode: UIView.ContentMode = .scaleAspectFit) {
-        contentMode = mode
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            guard
-                let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
-                let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
-                let data = data, error == nil,
-                let image = UIImage(data: data)
-                else { return }
-            DispatchQueue.main.async() {
-                self.image = image
-            }
-        }.resume()
-    }
-    func downloaded(from link: String, contentMode mode: UIView.ContentMode = .scaleAspectFit) {  // for swift 4.2 syntax just use ===> mode: UIView.ContentMode
-        guard let url = URL(string: link) else { return }
-        downloaded(from: url, contentMode: mode)
-    }
-}
-
-
-
-class Home_store: UIViewController, UICollectionViewDataSource,UITextFieldDelegate, UICollectionViewDelegate,UIScrollViewDelegate {
+class Home_store: UIViewController, UICollectionViewDataSource,UITextFieldDelegate, UICollectionViewDelegate {
 var cells: Response?
     //* Инициализация CollectionView1(Карусель) и CollectionView2(Группа)
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -109,17 +69,13 @@ var cells: Response?
         print(textField.text!)
         return true;
     }
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        if scrollView == Scroll1{
-//            scrollView.contentOffset = CGPoint(x: scrollView.contentOffset.x, y: 0)
-//        }
-    }
+    
 
 
-    @IBOutlet weak var Scroll1: UIScrollView!
+
     @IBOutlet weak var Search1: UITextField!
 
-    @IBOutlet var ButtonsUpBar: [UIButton]!
+    @IBOutlet var ButtonsUpBar: [UIButton]! // Коллекция кнопок-категорий над строкой поиска
     
    
     @IBOutlet weak var CarouselView: UICollectionView!
@@ -129,12 +85,12 @@ var cells: Response?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        Search1.placeholder = "Search"
-        CarouselView.dataSource = self // Инициализация карусели
+        //* Инициализаторы
+        CarouselView.dataSource = self
         GroupCollectionView.delegate = self
         GroupCollectionView.dataSource = self
         Search1.delegate = self
-     
+        //*
         
         //* Иконка поиска слева от TextField(Строка поиска)
         let findTextFieldImageView = UIImageView(frame: CGRect(x: 8.0, y: 12.0, width: 20.0, height: 20.0))
@@ -149,8 +105,10 @@ var cells: Response?
         Search1.leftViewMode = UITextField.ViewMode.always
         Search1.leftView = findTextFieldView
         //*
+        
+        //* Обработчик прерываний для Get запроса
         let url1=URL(string: "https://run.mocky.io/v3/654bd15e-b121-49ba-a588-960956b15175")
-        getData(from: url1!) { json in
+        getDataResponse(from: url1!) { json in
             print(json.best_seller[0].discount_price)
             OperationQueue.main.addOperation({ [self] in
                 
@@ -174,39 +132,11 @@ var cells: Response?
                 cells = json
                                })
         }
-        
-        
-        //* Get запрос
-        func getData(from url:URL, completion:@escaping(_:Response)->()){
-            let task = URLSession.shared.dataTask(with: url){data,response,error in
-             
-                guard let data = data, error == nil else{
-                    print("something wrong")
-                    return
-                }
-                
-                //have data
-                var result:Response?
-                do {
-                    result = try JSONDecoder().decode(Response.self, from: data)
-                }
-                catch{
-                    print("failed to convert \(error.localizedDescription)")
-                }
-                
-              guard let json = result else{
-                    return
-              }
-            completion(json)
-              
-            }
-            task.resume()
-        }
         //*
 
     }
    
-    @IBAction func IfTapped(_ sender: UIButton) {
+    @IBAction func IfTapped(_ sender: UIButton) {//Кнопки красятся в ScrollView
         for i in ButtonsUpBar{
             i.backgroundColor = .systemGray4
         }
