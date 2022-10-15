@@ -3,7 +3,8 @@
 //  Ecomercie concept
 //
 //  Created by Georgy on 21.09.2022.
-//
+// Структуры для Codable-парсинга get запросов к API
+// Функция для зачеркивания и подчеркивания текста
 
 import Foundation
 import UIKit
@@ -98,4 +99,4 @@ func MakeText(type:String) -> NSAttributedString{
     }
     return attributedText!}
     
-var Cart:Int! = 0
+var Cart:Int! = 0 // Глобальная переменная количества предметов в корзине, для отображения на всех вкладках 

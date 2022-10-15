@@ -3,12 +3,12 @@
 //  Ecomercie concept
 //
 //  Created by Georgy on 23.08.2022.
-//
+// Главное окно, Обработка двух collectionView, TextField, Get запросы к API
 
 import UIKit
 import Foundation
 
-extension UIColor {
+extension UIColor {//Расширение для перервода HEX в RGb
    convenience init(red: Int, green: Int, blue: Int) {
        assert(red >= 0 && red <= 255, "Invalid red component")
        assert(green >= 0 && green <= 255, "Invalid green component")
@@ -17,7 +17,7 @@ extension UIColor {
        self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: 1.0)
    }
 
-   convenience init(rgb: Int) {
+   convenience init(rgb: Int){
        self.init(
            red: (rgb >> 16) & 0xFF,
            green: (rgb >> 8) & 0xFF,
@@ -25,7 +25,7 @@ extension UIColor {
        )
    }
 }
-extension UIImageView {
+extension UIImageView {// Расширение для скачивания картинок по URL
     func downloaded(from url: URL, contentMode mode: UIView.ContentMode = .scaleAspectFit) {
         contentMode = mode
         URLSession.shared.dataTask(with: url) { data, response, error in
@@ -48,7 +48,7 @@ extension UIImageView {
 
 
 
-class Home_store: UIViewController, UICollectionViewDataSource,UITextFieldDelegate, UICollectionViewDelegate,UIScrollViewDelegate {
+class Home_store: UIViewController, UICollectionViewDataSource,UITextFieldDelegate, UICollectionViewDelegate {
 var cells: Response?
     //* Инициализация CollectionView1(Карусель) и CollectionView2(Группа)
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -109,17 +109,13 @@ var cells: Response?
         print(textField.text!)
         return true;
     }
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        if scrollView == Scroll1{
-//            scrollView.contentOffset = CGPoint(x: scrollView.contentOffset.x, y: 0)
-//        }
-    }
+    
 
 
-    @IBOutlet weak var Scroll1: UIScrollView!
+
     @IBOutlet weak var Search1: UITextField!
 
-    @IBOutlet var ButtonsUpBar: [UIButton]!
+    @IBOutlet var ButtonsUpBar: [UIButton]! // Коллекция кнопок-категорий над строкой поиска
     
    
     @IBOutlet weak var CarouselView: UICollectionView!
@@ -129,12 +125,12 @@ var cells: Response?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        Search1.placeholder = "Search"
-        CarouselView.dataSource = self // Инициализация карусели
+        //* Инициализаторы
+        CarouselView.dataSource = self
         GroupCollectionView.delegate = self
         GroupCollectionView.dataSource = self
         Search1.delegate = self
-     
+        //*
         
         //* Иконка поиска слева от TextField(Строка поиска)
         let findTextFieldImageView = UIImageView(frame: CGRect(x: 8.0, y: 12.0, width: 20.0, height: 20.0))
@@ -149,6 +145,8 @@ var cells: Response?
         Search1.leftViewMode = UITextField.ViewMode.always
         Search1.leftView = findTextFieldView
         //*
+        
+        //* Обработчик прерываний для Get запроса
         let url1=URL(string: "https://run.mocky.io/v3/654bd15e-b121-49ba-a588-960956b15175")
         getData(from: url1!) { json in
             print(json.best_seller[0].discount_price)
@@ -174,7 +172,7 @@ var cells: Response?
                 cells = json
                                })
         }
-        
+        //*
         
         //* Get запрос
         func getData(from url:URL, completion:@escaping(_:Response)->()){
@@ -206,7 +204,7 @@ var cells: Response?
 
     }
    
-    @IBAction func IfTapped(_ sender: UIButton) {
+    @IBAction func IfTapped(_ sender: UIButton) {//Кнопки красятся в ScrollView
         for i in ButtonsUpBar{
             i.backgroundColor = .systemGray4
         }

@@ -3,7 +3,7 @@
 //  Ecomercie concept
 //
 //  Created by Georgy on 30.09.2022.
-//
+// Окно Корзины,Удаление элементов, подсчет цены всех элементов(в зависимости от количества самих элементов и количество позиций в каждом элементе)
 
 import UIKit
 
@@ -57,8 +57,6 @@ class CartController: UIViewController,UITableViewDataSource,UITableViewDelegate
 
     @IBAction func BackPlease(_ sender: UIButton) {
        navigationController?.popViewController(animated: true)
-        
-        
     }
     @IBAction func DeleteRow(_ sender: UIButton) {
         let indexPath = IndexPath(row: sender.tag, section: 0)

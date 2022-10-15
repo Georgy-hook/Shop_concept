@@ -3,7 +3,7 @@
 //  Ecomercie concept
 //
 //  Created by Georgy on 21.09.2022.
-//
+// Протокол раскрывающиегося списка на основе tableView для фильтров
 
 import UIKit
 protocol ExpandableHeaderViewDelegate {

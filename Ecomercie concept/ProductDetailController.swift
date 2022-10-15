@@ -3,7 +3,7 @@
 //  Ecomercie concept
 //
 //  Created by Georgy on 23.09.2022.
-//
+// Детали телефона, get запрос и его обработка в CollectionView и Label, реализация рейтинговых звезд, а также поддержка кликабельности кнопок выбора деталей
 
 import UIKit
 
