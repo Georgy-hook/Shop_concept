@@ -3,15 +3,17 @@
 //  Ecomercie concept
 //
 //  Created by Georgy on 30.09.2022.
-//
+// Окно Корзины,Удаление элементов, подсчет цены всех элементов(в зависимости от количества самих элементов и количество позиций в каждом элементе)
 
 import UIKit
+var Cart:Int! = 0 // Переменная количества предметов в корзине, для отображения на всех вкладках
 
 class CartController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
     var detail:Details!
     var total = 0
     var currentPrice: Int?
+    
     @IBOutlet weak var CartTableView: UITableView!
     
     @IBOutlet weak var TotalLabel: UILabel!
@@ -41,15 +43,21 @@ class CartController: UIViewController,UITableViewDataSource,UITableViewDelegate
         }
             return cell
     }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("you tapped me")
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let url1=URL(string: "https://run.mocky.io/v3/6c14c560-15c6-4248-b9d2-b4508df7d4f5")
+        Connect().getDataDetails(from: url1!) { json in
+            self.detail = json
+            OperationQueue.main.addOperation({ [self] in
+                currentPrice = detail.price
+                self.CartTableView.reloadData()
+            })
+                                             }
+    
         CartTableView.dataSource = self
         CartTableView.delegate = self
-        currentPrice = detail.price
+      
     }
     
 
@@ -57,8 +65,6 @@ class CartController: UIViewController,UITableViewDataSource,UITableViewDelegate
 
     @IBAction func BackPlease(_ sender: UIButton) {
        navigationController?.popViewController(animated: true)
-        
-        
     }
     @IBAction func DeleteRow(_ sender: UIButton) {
         let indexPath = IndexPath(row: sender.tag, section: 0)
@@ -75,7 +81,7 @@ class CartController: UIViewController,UITableViewDataSource,UITableViewDelegate
     @IBAction func ac(_ sender: UIButton) {
         total += detail.price
         TotalLabel.text = String(total)
-        
+
     }
     
     @IBAction func Decrement(_ sender: UIButton) {

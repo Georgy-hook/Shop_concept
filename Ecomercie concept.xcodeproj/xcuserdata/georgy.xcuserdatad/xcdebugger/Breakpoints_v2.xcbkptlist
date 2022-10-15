@@ -14,8 +14,8 @@
             filePath = "Ecomercie concept/Home_store.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "153"
-            endingLineNumber = "153"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -30,8 +30,8 @@
             filePath = "Ecomercie concept/Home_store.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "213"
-            endingLineNumber = "213"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
             landmarkName = "IfTapped(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -62,8 +62,8 @@
             filePath = "Ecomercie concept/Home_store.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "151"
-            endingLineNumber = "151"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -78,8 +78,8 @@
             filePath = "Ecomercie concept/Home_store.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "152"
-            endingLineNumber = "152"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -94,8 +94,8 @@
             filePath = "Ecomercie concept/Home_store.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
             landmarkName = "collectionView(_:cellForItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -110,8 +110,8 @@
             filePath = "Ecomercie concept/Home_store.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
             landmarkName = "collectionView(_:cellForItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -126,8 +126,8 @@
             filePath = "Ecomercie concept/Home_store.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
             landmarkName = "collectionView(_:cellForItemAt:)"
             landmarkType = "7">
             <Locations>
@@ -174,8 +174,8 @@
             filePath = "Ecomercie concept/Home_store.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
             landmarkName = "collectionView(_:cellForItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -314,8 +314,8 @@
             filePath = "Ecomercie concept/FilterViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
             landmarkName = "ChekButton(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -330,8 +330,8 @@
             filePath = "Ecomercie concept/ProductDetailController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "147"
-            endingLineNumber = "147"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
             landmarkName = "ChooseColor(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -378,8 +378,8 @@
             filePath = "Ecomercie concept/CartController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -394,8 +394,8 @@
             filePath = "Ecomercie concept/CartController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -518,8 +518,8 @@
             filePath = "Ecomercie concept/CartController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
             landmarkName = "Decrement(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -534,8 +534,8 @@
             filePath = "Ecomercie concept/CartController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
             landmarkName = "Decrement(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -550,8 +550,8 @@
             filePath = "Ecomercie concept/CartController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
             landmarkName = "ac(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -566,8 +566,8 @@
             filePath = "Ecomercie concept/CartController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -582,9 +582,289 @@
             filePath = "Ecomercie concept/CartController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
             landmarkName = "Decrement(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3BA43402-5D86-4375-819F-C22B83217E6A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Ecomercie concept/View_Controllers/CartController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3BA43402-5D86-4375-819F-C22B83217E6A - d7ae6f21dd55a07e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Ecomercie_concept.CartController.viewDidLoad() -&gt; ()"
+                  moduleName = "Ecomercie concept"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/georgy/Documents/%D0%9A%D1%83%D1%80%D1%81%D1%8B/Challenges/Ecomercie%20concept/Ecomercie%20concept/View_Controllers/CartController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "276">
+               </Location>
+               <Location
+                  uuid = "3BA43402-5D86-4375-819F-C22B83217E6A - dba1cee8de2cd846"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Ecomercie_concept.Details) -&gt; () in Ecomercie_concept.CartController.viewDidLoad() -&gt; ()"
+                  moduleName = "Ecomercie concept"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/georgy/Documents/%D0%9A%D1%83%D1%80%D1%81%D1%8B/Challenges/Ecomercie%20concept/Ecomercie%20concept/View_Controllers/CartController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "50"
+                  endingLineNumber = "50"
+                  offsetFromSymbolStart = "308">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "77CA3EFA-B4B8-4A5A-A154-DE1809AA1496"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Ecomercie concept/View_Controllers/Home_store.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
+            landmarkName = "Home_store"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "77CA3EFA-B4B8-4A5A-A154-DE1809AA1496 - 76c0ecb80507db58"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Ecomercie_concept.Home_store.ButtonsUpBar.getter : Swift.Optional&lt;Swift.Array&lt;__C.UIButton&gt;&gt;"
+                  moduleName = "Ecomercie concept"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/georgy/Documents/%D0%9A%D1%83%D1%80%D1%81%D1%8B/Challenges/Ecomercie%20concept/Ecomercie%20concept/View_Controllers/Home_store.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "153"
+                  endingLineNumber = "153"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "77CA3EFA-B4B8-4A5A-A154-DE1809AA1496 - 85efd9f8f2e59764"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Ecomercie_concept.Home_store.ButtonsUpBar.setter : Swift.Optional&lt;Swift.Array&lt;__C.UIButton&gt;&gt;"
+                  moduleName = "Ecomercie concept"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/georgy/Documents/%D0%9A%D1%83%D1%80%D1%81%D1%8B/Challenges/Ecomercie%20concept/Ecomercie%20concept/View_Controllers/Home_store.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "153"
+                  endingLineNumber = "153"
+                  offsetFromSymbolStart = "108">
+               </Location>
+               <Location
+                  uuid = "77CA3EFA-B4B8-4A5A-A154-DE1809AA1496 - 205588fb76d54455"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Ecomercie_concept.Home_store.ButtonsUpBar.modify : Swift.Optional&lt;Swift.Array&lt;__C.UIButton&gt;&gt;"
+                  moduleName = "Ecomercie concept"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/georgy/Documents/%D0%9A%D1%83%D1%80%D1%81%D1%8B/Challenges/Ecomercie%20concept/Ecomercie%20concept/View_Controllers/Home_store.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "153"
+                  endingLineNumber = "153"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "77CA3EFA-B4B8-4A5A-A154-DE1809AA1496 - f46f1657b132fb0c"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Ecomercie_concept.Home_store.ButtonsUpBar.modify : Swift.Optional&lt;Swift.Array&lt;__C.UIButton&gt;&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Ecomercie concept"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/georgy/Documents/%D0%9A%D1%83%D1%80%D1%81%D1%8B/Challenges/Ecomercie%20concept/Ecomercie%20concept/View_Controllers/Home_store.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "153"
+                  endingLineNumber = "153"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "77CA3EFA-B4B8-4A5A-A154-DE1809AA1496 - 856a310b092594ef"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Ecomercie_concept.Home_store.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Ecomercie_concept.Home_store"
+                  moduleName = "Ecomercie concept"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/georgy/Documents/%D0%9A%D1%83%D1%80%D1%81%D1%8B/Challenges/Ecomercie%20concept/Ecomercie%20concept/View_Controllers/Home_store.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "153"
+                  endingLineNumber = "153"
+                  offsetFromSymbolStart = "444">
+               </Location>
+               <Location
+                  uuid = "77CA3EFA-B4B8-4A5A-A154-DE1809AA1496 - e543e03733ef61f4"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Ecomercie_concept.Home_store.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Ecomercie_concept.Home_store&gt;"
+                  moduleName = "Ecomercie concept"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/georgy/Documents/%D0%9A%D1%83%D1%80%D1%81%D1%8B/Challenges/Ecomercie%20concept/Ecomercie%20concept/View_Controllers/Home_store.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "153"
+                  endingLineNumber = "153"
+                  offsetFromSymbolStart = "420">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A9E3BEE7-62AE-4465-99FC-D8C4F06B26ED"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Ecomercie concept/View_Controllers/Home_store.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "153"
+            endingLineNumber = "153"
+            landmarkName = "ButtonsUpBar"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "A9E3BEE7-62AE-4465-99FC-D8C4F06B26ED - 76c0ecb80507db58"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Ecomercie_concept.Home_store.ButtonsUpBar.getter : Swift.Optional&lt;Swift.Array&lt;__C.UIButton&gt;&gt;"
+                  moduleName = "Ecomercie concept"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/georgy/Documents/%D0%9A%D1%83%D1%80%D1%81%D1%8B/Challenges/Ecomercie%20concept/Ecomercie%20concept/View_Controllers/Home_store.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "153"
+                  endingLineNumber = "153"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "A9E3BEE7-62AE-4465-99FC-D8C4F06B26ED - 85efd9f8f2e59764"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Ecomercie_concept.Home_store.ButtonsUpBar.setter : Swift.Optional&lt;Swift.Array&lt;__C.UIButton&gt;&gt;"
+                  moduleName = "Ecomercie concept"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/georgy/Documents/%D0%9A%D1%83%D1%80%D1%81%D1%8B/Challenges/Ecomercie%20concept/Ecomercie%20concept/View_Controllers/Home_store.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "153"
+                  endingLineNumber = "153"
+                  offsetFromSymbolStart = "108">
+               </Location>
+               <Location
+                  uuid = "A9E3BEE7-62AE-4465-99FC-D8C4F06B26ED - 205588fb76d54455"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Ecomercie_concept.Home_store.ButtonsUpBar.modify : Swift.Optional&lt;Swift.Array&lt;__C.UIButton&gt;&gt;"
+                  moduleName = "Ecomercie concept"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/georgy/Documents/%D0%9A%D1%83%D1%80%D1%81%D1%8B/Challenges/Ecomercie%20concept/Ecomercie%20concept/View_Controllers/Home_store.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "153"
+                  endingLineNumber = "153"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "A9E3BEE7-62AE-4465-99FC-D8C4F06B26ED - f46f1657b132fb0c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Ecomercie_concept.Home_store.ButtonsUpBar.modify : Swift.Optional&lt;Swift.Array&lt;__C.UIButton&gt;&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Ecomercie concept"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/georgy/Documents/%D0%9A%D1%83%D1%80%D1%81%D1%8B/Challenges/Ecomercie%20concept/Ecomercie%20concept/View_Controllers/Home_store.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "153"
+                  endingLineNumber = "153"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "A9E3BEE7-62AE-4465-99FC-D8C4F06B26ED - 856a310b092594ef"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Ecomercie_concept.Home_store.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Ecomercie_concept.Home_store"
+                  moduleName = "Ecomercie concept"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/georgy/Documents/%D0%9A%D1%83%D1%80%D1%81%D1%8B/Challenges/Ecomercie%20concept/Ecomercie%20concept/View_Controllers/Home_store.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "153"
+                  endingLineNumber = "153"
+                  offsetFromSymbolStart = "444">
+               </Location>
+               <Location
+                  uuid = "A9E3BEE7-62AE-4465-99FC-D8C4F06B26ED - e543e03733ef61f4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Ecomercie_concept.Home_store.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Ecomercie_concept.Home_store&gt;"
+                  moduleName = "Ecomercie concept"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/georgy/Documents/%D0%9A%D1%83%D1%80%D1%81%D1%8B/Challenges/Ecomercie%20concept/Ecomercie%20concept/View_Controllers/Home_store.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "153"
+                  endingLineNumber = "153"
+                  offsetFromSymbolStart = "420">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "97FD778A-952B-4557-A8E5-B6A4FABCB437"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Ecomercie concept/View_Controllers/Home_store.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "collectionView(_:didSelectItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

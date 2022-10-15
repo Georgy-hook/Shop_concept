@@ -3,14 +3,13 @@
 //  Ecomercie concept
 //
 //  Created by Georgy on 23.09.2022.
-//
+// Детали телефона, get запрос и его обработка в CollectionView и Label, реализация рейтинговых звезд, а также поддержка кликабельности кнопок выбора деталей
 
 import UIKit
 
 class ProductDetailController: UIViewController,UICollectionViewDataSource {
     var detail : Details?
-    var cartHold = 0
-    
+    var IsFavorite = false
 
     @IBOutlet var Stars: [UIButton]!
     
@@ -29,6 +28,9 @@ class ProductDetailController: UIViewController,UICollectionViewDataSource {
     @IBOutlet weak var SDShow: UILabel!
     
     @IBOutlet weak var SSDShow: UILabel!
+    
+    
+    @IBOutlet weak var LikeBtn: UIButton!
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 2
@@ -49,7 +51,6 @@ class ProductDetailController: UIViewController,UICollectionViewDataSource {
     @IBOutlet weak var ProductCollection: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        cartHold = 0
         ProductCollection.dataSource = self
         //* Первоначальное состояние категорий
         Categories[0].setAttributedTitle(MakeText(type: "underLineShop"), for: .normal)
@@ -58,8 +59,7 @@ class ProductDetailController: UIViewController,UICollectionViewDataSource {
         //*
         //* Обработка прерываний
         let url1=URL(string: "https://run.mocky.io/v3/6c14c560-15c6-4248-b9d2-b4508df7d4f5")
-        getData(from: url1!) { json in
-            print(json.title)
+        Connect().getDataDetails(from: url1!) { json in
             self.detail = json
             var indexPath = IndexPath(item: 0, section: 0)
             OperationQueue.main.addOperation({ [self] in
@@ -75,43 +75,21 @@ class ProductDetailController: UIViewController,UICollectionViewDataSource {
                 SSDShow.text = detail?.ssd
             })
         }
-        //*
-        //* Get запрос
-        func getData(from url:URL, completion:@escaping(_:Details)->()){
-            let task = URLSession.shared.dataTask(with: url){data,response,error in
-             
-                guard let data = data, error == nil else{
-                    print("something wrong")
-                    return
-                }
-                
-                //have data
-                var result:Details?
-                do {
-                    result = try JSONDecoder().decode(Details.self, from: data)
-                }
-                catch{
-                    print("failed to convert \(error.localizedDescription)")
-                }
-                
-              guard let json = result else{
-                    return
-              }
-            completion(json)
-              
-            }
-            task.resume()
+
+        //* Отображаем был ли лайкнут телефон на который мы перешли
+        if IsFavorite == true {
+            LikeBtn.setImage(UIImage(systemName: "heart.fill", withConfiguration: UIImage.SymbolConfiguration(scale: .small)), for: .normal)
         }
         //*
    
     }
     
 
-    @IBAction func PushRoot(_ sender: Any) {
+    @IBAction func PushRoot(_ sender: Any) {//Возврат на Home_store
         navigationController?.popToRootViewController(animated: true)
     }
     
-    @IBAction func RatingStar(_ sender: UIButton) {
+    @IBAction func RatingStar(_ sender: UIButton) {//Функция для оценки телефона звездочками
         for i in sender.tag...4{
             Stars[i].setImage(UIImage(systemName: "star", withConfiguration: UIImage.SymbolConfiguration(scale: .small)), for: .normal)
         }
@@ -121,7 +99,7 @@ class ProductDetailController: UIViewController,UICollectionViewDataSource {
     }
     
     
-    @IBAction func SwitchCategories(_ sender: UIButton) {
+    @IBAction func SwitchCategories(_ sender: UIButton) {// Меняем категории путем подчеркивания нужной при нажатии
         
         switch sender.tag{
 
@@ -143,16 +121,16 @@ class ProductDetailController: UIViewController,UICollectionViewDataSource {
     }
     
     
-    @IBAction func ChooseColor(_ sender: UIButton) {
+    @IBAction func ChooseColor(_ sender: UIButton) {// Выбор цвета
         for i in 0...1 {
-            ChooseColor[i].setImage(UIImage(named: "Bag"), for: .normal)
+            ChooseColor[i].setImage(UIImage(), for: .normal)
         }
         sender.setImage(UIImage(systemName: "checkmark"), for: .normal)
         
     }
     
     
-    @IBAction func ChooseCapacity(_ sender: UIButton) {
+    @IBAction func ChooseCapacity(_ sender: UIButton) { // Выбор памяти
         for capacity in ChooseCapacity{
             capacity.backgroundColor = .white
             capacity.setTitleColor(.black, for: .normal)
@@ -165,9 +143,9 @@ class ProductDetailController: UIViewController,UICollectionViewDataSource {
     }
     
     
-    @IBAction func ShowCart(_ sender: UIButton) {
+    @IBAction func ShowCart(_ sender: UIButton) { // Открыть корзину
         let nextViewController = storyboard!.instantiateViewController(withIdentifier: "CartController") as! CartController
-        nextViewController.detail = detail
+        nextViewController.detail = detail!
             navigationController?.pushViewController(nextViewController, animated: true)
     }
     
