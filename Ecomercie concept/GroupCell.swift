@@ -3,7 +3,7 @@
 //  Ecomercie concept
 //
 //  Created by Georgy on 17.09.2022.
-//
+//Функции отклика на лайк, а также аутлеты на составляющие
 
 import UIKit
 

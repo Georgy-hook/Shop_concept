@@ -121,7 +121,7 @@ formattedString</string>
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NPl-B0-x8B">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NPl-B0-x8B">
                                 <rect key="frame" x="16" y="242" width="319" height="35"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -1680,8 +1680,8 @@ formattedString</string>
         <image name="filter" width="32" height="31"/>
         <image name="heart" catalog="system" width="128" height="107"/>
         <image name="iphone" catalog="system" width="112" height="128"/>
-        <image name="location" width="64" height="64"/>
         <image name="location" catalog="system" width="128" height="121"/>
+        <image name="location" width="64" height="64"/>
         <image name="memorychip" catalog="system" width="128" height="96"/>
         <image name="qr" width="16" height="16"/>
         <image name="questionmark" catalog="system" width="94" height="128"/>
